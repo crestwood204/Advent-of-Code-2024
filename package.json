@@ -1,0 +1,22 @@
+{
+  "name": "advent-of-code-2024",
+  "version": "1.0.0",
+  "description": "Advent of Code 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crestwood204/Advent-of-Code-2024.git"
+  },
+  "author": "crestwood204",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crestwood204/Advent-of-Code-2024/issues"
+  },
+  "homepage": "https://github.com/crestwood204/Advent-of-Code-2024#readme",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
