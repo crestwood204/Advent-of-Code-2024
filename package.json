@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/crestwood204/Advent-of-Code-2024#readme",
   "devDependencies": {
+    "@types/node": "^22.10.1",
     "typescript": "^5.7.2"
   }
 }
