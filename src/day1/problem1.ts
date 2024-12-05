@@ -1,7 +1,7 @@
 import readText from "../utils/readText";
 
 const problem1 = () => {
-  const text = readText("./problem1.txt");
+  const text = readText("./day1.txt");
 
   const list1: number[] = [];
   const list2: number[] = [];
