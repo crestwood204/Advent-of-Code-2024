@@ -1,7 +1,12 @@
 import fs from "fs";
+import path from "path";
 
 const readText = (fileName: string) => {
-  const data = fs.readFileSync(fileName, { encoding: "utf8", flag: "r" });
+  const currDir = path.resolve(__dirname, "../../input");
+  const data = fs.readFileSync(path.resolve(currDir, fileName), {
+    encoding: "utf8",
+    flag: "r",
+  });
 
   return data;
 };
