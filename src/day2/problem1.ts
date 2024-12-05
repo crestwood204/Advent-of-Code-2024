@@ -1,7 +1,7 @@
 import readText from "../utils/readText";
 
 const problem1 = () => {
-  const text = readText("./day2problem1.txt");
+  const text = readText("./day2.txt");
 
   let numSafeReports = 0;
 
