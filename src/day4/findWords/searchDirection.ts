@@ -36,7 +36,7 @@ const searchDirection = ({
 
 export default searchDirection;
 
-const outOfBounds = ({
+export const outOfBounds = ({
   grid,
   gridIndex,
 }: {
