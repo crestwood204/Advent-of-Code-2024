@@ -1,4 +1,6 @@
 import readText from "../utils/readText";
+import getMedian from "./getMedian";
+import getNotAfterRules from "./getNotAfterRules";
 
 const problem1 = () => {
   const text = readText("./day5.txt");
@@ -11,41 +13,15 @@ const problem1 = () => {
     .map((x) => x.split(",").filter(Boolean));
 
   // create a dictionary of rules: num => nums that can't come after
-  const notAfter: Record<string, string[]> = {};
-
-  rules.forEach((rule) => {
-    const [before, after] = rule.split("|");
-
-    if (notAfter.hasOwnProperty(after)) {
-      notAfter[after].push(before);
-    } else {
-      notAfter[after] = [before];
-    }
-  });
+  const notAfter = getNotAfterRules(rules);
 
   let runningTotal = 0;
 
   // for each line, encounter a number, get the ones that can't come after
   pageNumsList.forEach((pageNums) => {
-    const disallowList: string[] = [];
-    let failed = false;
-
-    for (let i = 0; i < pageNums.length; i++) {
-      const pageNum = pageNums[i];
-
-      if (disallowList.includes(pageNum)) {
-        failed = true;
-        break;
-      }
-
-      if (notAfter.hasOwnProperty(pageNum)) {
-        disallowList.push(...notAfter[pageNum]);
-      }
-    }
-
-    // calculate median number
+    const { failed, total } = getMedian({ pageNums, rules: notAfter });
     if (!failed) {
-      runningTotal += parseInt(pageNums[(pageNums.length + 1) / 2 - 1]);
+      runningTotal += total;
     }
   });
 
